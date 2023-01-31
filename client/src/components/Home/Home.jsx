@@ -71,9 +71,19 @@ export default function Home() {
       <NavBar />
       <h1>Pokemon PI</h1>
       <div>
-        <Link to="/create">Crear Pokemon</Link>
+        <Link to="/create" className={styles.create}>
+          Crear Pokemon
+        </Link>
         <div className={styles.buttons}>
           <SearchBar />
+          <button
+            onClick={(e) => {
+              handleClick(e);
+            }}
+            className={styles.buttons}
+          >
+            Recargar pokemons
+          </button>
         </div>
         <div className={styles.buttons}>
           <select onChange={(e) => handleSort(e)} className={styles.options}>
@@ -119,14 +129,7 @@ export default function Home() {
             <option value="created">Creados</option>
           </select>
         </div>
-        <button
-          onClick={(e) => {
-            handleClick(e);
-          }}
-          className={styles.buttons}
-        >
-          Recargar pokemons
-        </button>
+
         <Pagination
           pokemonsPerPage={pokemonsPerPage}
           allPokemons={allPokemons.length}
