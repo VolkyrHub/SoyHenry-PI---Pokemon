@@ -68,7 +68,6 @@ export default function PokemonCreate() {
         ...input,
         types: [...input.types, e.target.name],
       });
-      console.log(input.types);
     }
   }
 
@@ -198,81 +197,171 @@ export default function PokemonCreate() {
               Lucha
             </label>
             <label>
-              <input type="checkbox" name="flying" value="flying" />
+              <input
+                type="checkbox"
+                name="flying"
+                value={3}
+                onChange={(e) => handleCheck(e)}
+              />
               Volador
             </label>
             <label>
-              <input type="checkbox" name="poison" value="poison" />
+              <input
+                type="checkbox"
+                name="poison"
+                value={4}
+                onChange={(e) => handleCheck(e)}
+              />
               Veneno
             </label>
             <label>
-              <input type="checkbox" name="ground" value="ground" />
+              <input
+                type="checkbox"
+                name="ground"
+                value={5}
+                onChange={(e) => handleCheck(e)}
+              />
               Tierra
             </label>
           </div>
           <div className={styles.display}>
             <label>
-              <input type="checkbox" name="rock" value="rock" />
+              <input
+                type="checkbox"
+                name="rock"
+                value={6}
+                onChange={(e) => handleCheck(e)}
+              />
               Roca
             </label>
             <label>
-              <input type="checkbox" name="bug" value="bug" />
+              <input
+                type="checkbox"
+                name="bug"
+                value={7}
+                onChange={(e) => handleCheck(e)}
+              />
               Bicho
             </label>
             <label>
-              <input type="checkbox" name="ghost" value="ghost" />
+              <input
+                type="checkbox"
+                name="ghost"
+                value={8}
+                onChange={(e) => handleCheck(e)}
+              />
               Fantasma
             </label>
             <label>
-              <input type="checkbox" name="steel" value="steel" />
+              <input
+                type="checkbox"
+                name="steel"
+                value={9}
+                onChange={(e) => handleCheck(e)}
+              />
               Acero
             </label>
             <label>
-              <input type="checkbox" name="fire" value="fire" />
+              <input
+                type="checkbox"
+                name="fire"
+                value={10}
+                onChange={(e) => handleCheck(e)}
+              />
               Fuego
             </label>
           </div>
           <div className={styles.display}>
             <label>
-              <input type="checkbox" name="water" value="water" />
+              <input
+                type="checkbox"
+                name="water"
+                value={11}
+                onChange={(e) => handleCheck(e)}
+              />
               Agua
             </label>
             <label>
-              <input type="checkbox" name="grass" value="grass" />
+              <input
+                type="checkbox"
+                name="grass"
+                value={12}
+                onChange={(e) => handleCheck(e)}
+              />
               Planta
             </label>
             <label>
-              <input type="checkbox" name="electric" value="electric" />
+              <input
+                type="checkbox"
+                name="electric"
+                value={13}
+                onChange={(e) => handleCheck(e)}
+              />
               Eléctrico
             </label>
             <label>
-              <input type="checkbox" name="psychic" value="psychic" />
+              <input
+                type="checkbox"
+                name="psychic"
+                value={14}
+                onChange={(e) => handleCheck(e)}
+              />
               Psíquico
             </label>
             <label>
-              <input type="checkbox" name="ice" value="ice" />
+              <input
+                type="checkbox"
+                name="ice"
+                value={15}
+                onChange={(e) => handleCheck(e)}
+              />
               Hielo
             </label>
           </div>
           <div className={styles.display}>
             <label>
-              <input type="checkbox" name="dragon" value="dragon" />
+              <input
+                type="checkbox"
+                name="dragon"
+                value={16}
+                onChange={(e) => handleCheck(e)}
+              />
               Dragón
             </label>
             <label>
-              <input type="checkbox" name="dark" value="dark" />
+              <input
+                type="checkbox"
+                name="dark"
+                value={17}
+                onChange={(e) => handleCheck(e)}
+              />
               Siniestro
             </label>
             <label>
-              <input type="checkbox" name="fairy" value="fairy" />
+              <input
+                type="checkbox"
+                name="fairy"
+                value={18}
+                onChange={(e) => handleCheck(e)}
+              />
               Hada
             </label>
             <label>
-              <input type="checkbox" name="unknow" value="unknow" />
+              <input
+                type="checkbox"
+                name="unknow"
+                value={19}
+                onChange={(e) => handleCheck(e)}
+              />
               Desconocido
             </label>
             <label>
-              <input type="checkbox" name="shadow" value="shadow" />
+              <input
+                type="checkbox"
+                name="shadow"
+                value={20}
+                onChange={(e) => handleCheck(e)}
+              />
               Sombra
             </label>
           </div>

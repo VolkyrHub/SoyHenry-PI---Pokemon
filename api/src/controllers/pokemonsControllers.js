@@ -41,10 +41,10 @@ const getDetailedPokemons = async (id) => {
   return dataPokemons;
 };
 
-const filtrarPokemonBD = (pokemon) => {
-  const tipos = [];
-  pokemon.types.forEach((element) => tipos.push(element["name"]));
-  pokemon["types"] = tipos;
+const filterPokemonDb = (pokemon) => {
+  const newTypes = [];
+  pokemon.types.forEach((element) => newTypes.push(element["name"]));
+  pokemon["types"] = newTypes;
   return pokemon;
 };
 
@@ -60,7 +60,7 @@ const getDbInfo = async () => {
   });
   var pokeFiltered = arrPoke.map((elem) => elem.dataValues);
 
-  return pokeFiltered.map((elem) => filtrarPokemonBD(elem));
+  return pokeFiltered.map((elem) => filterPokemonDb(elem));
 };
 
 const getAllPokemons = async () => {

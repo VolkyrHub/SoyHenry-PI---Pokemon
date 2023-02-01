@@ -25,9 +25,6 @@ export default function Card({ id, name, image, types }) {
       {types.map((type) => (
         <h5 className={typeStyle}>{type}</h5>
       ))}
-      {/* <Link to={"/pokemons/" + id}>
-        <button className={buttonStyle}>Ver Pokemon</button>
-      </Link> */}
     </div>
   );
 }
