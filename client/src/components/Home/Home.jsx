@@ -71,9 +71,6 @@ export default function Home() {
       <NavBar />
       <h1>Pokemon PI</h1>
       <div>
-        <Link to="/create" className={styles.create}>
-          Crear Pokemon
-        </Link>
         <div className={styles.buttons}>
           <SearchBar />
           <button

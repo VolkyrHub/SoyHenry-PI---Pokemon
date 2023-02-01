@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { postPokemon, getTypes } from "../../store/actions";
 import NavBar from "../NavBar/NavBar";
 import styles from "./Create.module.css";
@@ -366,7 +366,9 @@ export default function PokemonCreate() {
             </label>
           </div>
         </div>
-        <button type="submit">Crear</button>
+        <button type="submit" className={styles.buttons}>
+          Crear
+        </button>
       </form>
     </div>
   );

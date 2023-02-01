@@ -8,6 +8,7 @@ export default function Pagination({
 }) {
   const pageNumbers = [];
 
+  // Acá se pushean la cantidad de páginas que va a tener según el número de pokemons (40) dividio la cantidad de pokemons por página (12)
   for (let i = 1; i <= Math.ceil(allPokemons / pokemonsPerPage); i++) {
     pageNumbers.push(i);
   }
