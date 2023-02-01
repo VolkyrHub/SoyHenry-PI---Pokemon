@@ -5,6 +5,7 @@ const {
   findPokemonById,
   updateOrCreatePokemon,
 } = require("../controllers/pokemonsControllers");
+const { Pokemon, Type } = require("../db");
 
 const pokemonsRouter = Router();
 
@@ -39,9 +40,9 @@ pokemonsRouter.get("/:id", async (req, res) => {
 pokemonsRouter.post("/", async (req, res) => {
   const { name, health, attack, defense, speed, height, weight, image, types } =
     req.body;
-
+  console.log(types);
   try {
-    const newPokemon = updateOrCreatePokemon({
+    const newPokemon = await updateOrCreatePokemon({
       name,
       health,
       attack,
@@ -50,6 +51,15 @@ pokemonsRouter.post("/", async (req, res) => {
       height,
       weight,
       image,
+    });
+    console.log(newPokemon);
+    types.map(async (tipo) => {
+      const dbType = await Type.findOrCreate({
+        where: {
+          name: tipo,
+        },
+      });
+      newPokemon.addType(dbType[0]);
     });
     res.status(200).send(`¡El pokemon ${name} se ha creado correctamente!`);
   } catch (error) {

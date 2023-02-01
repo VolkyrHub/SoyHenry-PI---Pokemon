@@ -63,10 +63,12 @@ export default function PokemonCreate() {
 
   function handleCheck(e) {
     if (e.target.checked) {
+      console.log(e.target.name);
       setInput({
         ...input,
-        types: [...input.types, e.target.value],
+        types: [...input.types, e.target.name],
       });
+      console.log(input.types);
     }
   }
 

@@ -41,8 +41,15 @@ const getDetailedPokemons = async (id) => {
   return dataPokemons;
 };
 
+const filtrarPokemonBD = (pokemon) => {
+  const tipos = [];
+  pokemon.types.forEach((element) => tipos.push(element["name"]));
+  pokemon["types"] = tipos;
+  return pokemon;
+};
+
 const getDbInfo = async () => {
-  return await Pokemon.findAll({
+  const arrPoke = await Pokemon.findAll({
     include: {
       model: Type,
       attributes: ["name"],
@@ -51,6 +58,9 @@ const getDbInfo = async () => {
       },
     },
   });
+  var pokeFiltered = arrPoke.map((elem) => elem.dataValues);
+
+  return pokeFiltered.map((elem) => filtrarPokemonBD(elem));
 };
 
 const getAllPokemons = async () => {
@@ -88,7 +98,7 @@ const updateOrCreatePokemon = async (newPokemon) => {
   if (alreadyHave) {
     throw Error(`El pokemon ${newPokemon.name} ya existe`);
   } else {
-    await Pokemon.create({
+    const pokeDb = await Pokemon.create({
       name: newPokemon.name.toLowerCase(),
       health: newPokemon.health,
       attack: newPokemon.attack,
@@ -98,6 +108,7 @@ const updateOrCreatePokemon = async (newPokemon) => {
       weight: newPokemon.weight,
       image: newPokemon.image,
     });
+    return pokeDb;
   }
 };
 
