@@ -74,8 +74,8 @@ export default function PokemonCreate() {
   function handleSubmit(e) {
     e.preventDefault();
     dispatch(postPokemon(input));
-    console.log(input);
     alert(`¡El pokemon ${input.name} se ha creado exitosamente!`);
+    console.log(input);
 
     setInput({
       name: "",
@@ -167,7 +167,7 @@ export default function PokemonCreate() {
           {errors.weight && <p className="error">{errors.weight}</p>}
         </div>
         <div>
-          <label for="url">Dirección URL de la imagen:</label>
+          <label for="url">URL de la imagen:</label>
           <input
             type="url"
             value={input.image}
@@ -175,7 +175,7 @@ export default function PokemonCreate() {
             onChange={handleChange}
           />
         </div>
-        <div>
+        <div className={styles.margin}>
           <label>Tipo:</label>
           <div className={styles.display}>
             <label>
